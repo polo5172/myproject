@@ -66,6 +66,15 @@ pipeline
 				sh 'docker run -itd -P polo5172/abc_tech:$BUILD_NUMBER'
 			}
 		}
+                
+                stage('Deploy to kubernetes')
+		{
+			steps
+			{
+				sh 'kubectl apply -f abcdeploy.yaml'
+				sh 'kubectl apply -f abcservice.yaml'
+			}
+		}
 
 
    }
