@@ -5,12 +5,12 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: abctech_app
+      app: abctech-app
   replicas: 3
   template:
     metadata:
       labels:
-        app: abctech_app
+        app: abctech-app
     spec:
       containers:
       - name: abctech-container
