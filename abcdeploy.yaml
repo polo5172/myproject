@@ -5,16 +5,16 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: abc_deploy
+      app: abctech_deploy
   replicas: 3
   template:
     metadata:
       labels:
-        app: abc_deploy
+        app: abctech_deploy
     spec:
       containers:
-      - name: abc-app
-        image: polo5172/abc_tech:latest
+      - name: abctech-app
+        image: polo5172/abctech:latest
         ports:
         - containerPort: 8080
 
