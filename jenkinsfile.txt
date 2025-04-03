@@ -42,7 +42,7 @@ pipeline
 			{
 			    sh 'cp /var/lib/jenkins/workspace/$JOB_NAME/target/ABCtechnologies-1.0.war /var/lib/jenkins/workspace/$JOB_NAME/ABCtechnologies-1.0.war'
 				
-                sh 'docker build -t polo5172/abctech:$BUILD_NUMBER .'
+                sh 'docker build -t polo5172/abctech1:$BUILD_NUMBER .'
 
 			}
 		}
@@ -53,7 +53,7 @@ pipeline
 			{   
 			    withDockerRegistry([ credentialsId: "dockerhub", url: "" ])
 			    {   
-			       sh 'docker push polo5172/abctech:$BUILD_NUMBER'
+			       sh 'docker push polo5172/abctech1:$BUILD_NUMBER'
 				   
 			    }
 			}
@@ -63,7 +63,7 @@ pipeline
 		{
 			steps
 			{
-				sh 'docker run -itd -P polo5172/abctech:$BUILD_NUMBER'
+				sh 'docker run -itd -P polo5172/abctech1:$BUILD_NUMBER'
 			}
 		}
                 
